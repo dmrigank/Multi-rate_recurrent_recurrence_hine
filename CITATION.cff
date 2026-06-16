@@ -5,7 +5,10 @@ title: "MSR-HINE-2D: Multiscale Recurrent Hierarchical Neural Emulator for 2D Ko
 authors:
   - family-names: Dhingra
     given-names: Mrigank
-    email: mrigank.dhingra99@gmail.com
+    orcid: "https://orcid.org/0009-0007-1188-7937"
+  - family-names: San
+    given-names: Omer
+    orcid: "https://orcid.org/0000-0002-2241-4648"
 repository-code: "https://github.com/dmrigank/Multi-rate_recurrent_recurrence_hine"
 license: MIT
 version: "1.0.0"
