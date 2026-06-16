@@ -1,5 +1,0 @@
-Model,Inference_ms_per_step,Training_s_per_iter
-FNO-AR,2.31,0.120
-UNet-AR,6.91,0.306
-HINE-L2,7.42,0.429
-MSR-HINE,9.90,0.370
