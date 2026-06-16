@@ -225,7 +225,8 @@ These encode the structural corrections over earlier HINE formulations:
   title     = {{MSR-HINE-2D}: Multiscale Recurrent Hierarchical Neural Emulator for 2D Kolmogorov Flow},
   year      = {2026},
   url       = {https://github.com/dmrigank/Multi-rate_recurrent_recurrence_hine},
-  license   = {MIT}
+  license   = {MIT},
+  doi       = {10.5281/zenodo.20711364}
 }
 ```
 
