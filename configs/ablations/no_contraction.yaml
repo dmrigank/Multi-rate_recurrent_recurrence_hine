@@ -1,0 +1,20 @@
+# Ablation: no_contraction
+# @package _global_
+defaults:
+  - /config
+  - /model: model_msr_hine
+  - _self_
+
+model:
+  name: "msr_hine"
+  recurrence:
+    use_contraction: false
+train:
+  lambda_prior: 0.1
+  lambda_cons: 0.1
+  lambda_spec: 0.01
+  lambda_highk: 0.0
+  scheduled_sampling:
+    start_prob: 1.0
+    end_prob: 0.0
+

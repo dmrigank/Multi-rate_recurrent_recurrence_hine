@@ -1,0 +1,15 @@
+\begin{table}[t]
+\centering
+\caption{Ablation study. Each variant removes one mechanism from MSR-HINE. $\Delta$\% is the relative change vs.\ the full model (negative\,=\,degradation). VPH uses the fixed full-test climatology convention of Fig.~1; RMSE and SpecErr are evaluated at $1\,\tau_\lambda$.}
+\label{tab:ablation}
+\begin{tabular}{lrrrrrr}
+\toprule
+Model & VPH\,($\tau_\lambda$) & RMSE@$1\tau$ & SpecErr & $\Delta$VPH\,\% & $\Delta$RMSE\,\% & $\Delta$SpecErr\,\% \\
+\midrule
+MSR-HINE (full) & 1.860 & 2.7450 & 0.3647 & +0.0 & +0.0 & +0.0 \\
+No multirate & 1.813 & 2.8007 & 0.3372 & -2.6 & -2.0 & +7.6 \\
+No top-down & 1.836 & 2.9002 & 0.2158 & -1.3 & -5.7 & +40.8 \\
+Single scale & 1.634 & 3.2878 & 0.2676 & -12.2 & -19.8 & +26.6 \\
+\bottomrule
+\end{tabular}
+\end{table}

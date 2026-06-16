@@ -1,0 +1,15 @@
+\begin{table}[t]
+\centering
+\caption{Inference and training wall-clock times on the 2D Kolmogorov flow task ($256\times256$, batch size 1, NVIDIA RTX 4090). Inference reports the mean time per autoregressive step (100 steps). Training reports the mean time per iteration including warmup ($W=12$) and rollout ($K=16$) with backpropagation.}
+\label{tab:timing}
+\begin{tabular}{lrr}
+\toprule
+Model & Inference (ms/step) & Training (s/iter, $K=16$) \\
+\midrule
+FNO-AR & 2.31 & 0.120 \\
+UNet-AR & 6.91 & 0.306 \\
+HINE-L2 & 7.42 & 0.429 \\
+MSR-HINE & 9.90 & 0.370 \\
+\bottomrule
+\end{tabular}
+\end{table}

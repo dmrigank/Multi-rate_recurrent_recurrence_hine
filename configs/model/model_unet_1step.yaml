@@ -1,0 +1,13 @@
+# Model config for the U-Net one-step autoregressive baseline.
+# Same U-Net backbone as HINE/MSR-HINE, no recurrence.
+# @package model
+
+name: "unet_1step"
+
+unet:
+  base_channels: 64
+  channel_mults: [1, 2, 2, 4, 4]
+  n_res_blocks: 2
+  groups: 8
+  attn_resolutions: [16]
+  high_k_damping: false

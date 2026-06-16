@@ -1,0 +1,21 @@
+# Ablation config: unet_1step explicit autoregressive baseline.
+# Mirrors fno_1step.yaml exactly; backbone switched to U-Net.
+# @package _global_
+defaults:
+  - /config
+  - override /model: model_unet_1step
+  - _self_
+
+train:
+  warmup_steps: 4
+  rollout_steps: 16
+  learning_rate: 1.0e-4
+  window_stride: 4
+  grad_checkpoint: false
+  lambda_prior: 0.0
+  lambda_cons:  0.0
+  lambda_spec:  0.01
+  lambda_highk: 0.0
+  scheduled_sampling:
+    start_prob: 1.0
+    end_prob: 0.0

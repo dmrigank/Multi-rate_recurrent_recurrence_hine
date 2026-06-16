@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite it as below."
+type: software
+title: "MSR-HINE-2D: Multiscale Recurrent Hierarchical Neural Emulator for 2D Kolmogorov Flow"
+authors:
+  - family-names: Dhingra
+    given-names: Mrigank
+    email: mrigank.dhingra99@gmail.com
+repository-code: "https://github.com/dmrigank/Multi-rate_recurrent_recurrence_hine"
+license: MIT
+version: "1.0.0"
+date-released: "2026-06-15"
+abstract: >
+  MSR-HINE-2D is a multiscale recurrent hierarchical neural emulator that stabilizes
+  long-horizon autoregressive rollouts of chaotic PDEs. The method uses a modern 2D
+  U-Net backbone with persistent multi-rate GRU latent states at medium and coarse
+  spectral scales, benchmarked on 2D forced Kolmogorov flow (Re=4000, 256×256).
+  Latent-state consistency is enforced only as a training loss; the inference path
+  carries no posterior re-encoding, eliminating the circularity present in earlier
+  HINE formulations.
+keywords:
+  - neural emulator
+  - chaotic PDE
+  - Kolmogorov flow
+  - turbulence
+  - multiscale
+  - recurrent neural network
+  - U-Net
+  - spectral methods
+  - long-horizon rollout

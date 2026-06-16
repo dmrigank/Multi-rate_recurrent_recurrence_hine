@@ -1,0 +1,39 @@
+# Data config for 2D forced Kolmogorov flow (DESIGN.md §1, §5).
+# @package data
+
+# Physics
+re: 4000
+nu: 2.5e-4        # = 1/re; overridden by curriculum if enabled
+k_f: 4
+mu: 0.1           # linear drag coefficient
+
+# Grid
+n: 256            # spatial grid size (n x n)
+
+# Solver time step (CFL-limited; 2.5e-4 is safe for n=256, Re=4000)
+dt_substep: 2.5e-4
+
+# Snapshot interval: dt_snapshot = dt_substep * substeps_per_snapshot ≈ τ/15
+# At Re=4000 τ ≈ 0.25 time units → dt_snapshot ≈ 0.017
+substeps_per_snapshot: 80   # 80 × 2.5e-4 = 0.02 ≈ τ/15 at Re=4000
+
+# Spin-up before saving: 50–100 turnover times
+# At τ≈0.25, 75τ ≈ 18.75 time units ≈ 75000 substeps at dt=2.5e-4
+spinup_steps: 75000
+
+# Dataset sizes (trajectory-level splits — Invariant 9)
+n_train: 50
+n_val: 5
+n_test: 10
+train_steps: 500        # saved snapshots per train trajectory
+val_steps: 500
+test_steps: 1500
+
+# Storage
+dataset_root: "${hydra:runtime.cwd}/data/kolmogorov"
+
+# Debug-mode overrides (used by generate.py --debug)
+debug_n: 64              # smaller grid for fast debugging
+debug_re: 1000.0
+debug_dt: 5e-3
+debug_substeps_per_snapshot: 5

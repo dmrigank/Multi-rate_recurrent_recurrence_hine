@@ -1,0 +1,35 @@
+# Model config for full MSR-HINE-2D (DESIGN.md §3-4, CLAUDE.md §3).
+# @package model
+
+name: "msr_hine"
+
+# U-Net backbone (shared with hine)
+unet:
+  base_channels: 64
+  channel_mults: [1, 2, 2, 4, 4]
+  n_res_blocks: 2
+  groups: 8
+  attn_resolutions: [16]
+  high_k_damping: false
+
+# Recurrent hierarchy
+recurrence:
+  medium_dim: 128
+  coarse_dim: 64
+  medium_stride: 2
+  coarse_stride: 4
+  alpha_max: 0.2          # gain bound for contraction safeguard (Invariant 6)
+  use_contraction: true   # set false for no_contraction ablation
+
+# FiLM conditioning. "direct" preserves the v4 architecture/checkpoint semantics.
+film:
+  gamma_mode: direct
+  gamma_scale: 0.5
+
+# Spectral bands (fixed, nested — Invariant 5)
+spectral:
+  medium_k_max: 16
+  coarse_k_max: 8
+
+# Warmup
+warmup_steps: 12          # W = 12 (Invariant 7)

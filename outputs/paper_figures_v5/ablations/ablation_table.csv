@@ -1,0 +1,5 @@
+model,vph_tau_lambda,vph_steps,rmse_at_1tau
+MSR-HINE (full),1.765,148,2.7450
+No multirate,1.717,144,2.8007
+No top-down,1.717,144,2.9002
+Single scale,1.550,130,3.2878

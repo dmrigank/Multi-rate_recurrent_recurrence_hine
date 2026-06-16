@@ -1,0 +1,16 @@
+\begin{table}[t]
+\centering
+\caption{Rollout RMSE at five equally-spaced lead times up to $2\,\tau_\lambda$ ($\approx 168$ steps). Each step $\approx 0.02$ time units. For HINE-L2 and MSR-HINE, values are mean $\pm$ one standard deviation over 10 test trajectories. `—' = diverged (non-finite).}
+\label{tab:rollout_rmse}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lrrrrr}
+\toprule
+Model & $t=1$ & $t=43$ & $t=85$ & $t=126$ & $t=168$ \\
+\midrule
+UNet-AR & 0.1248 & — & — & — & — \\
+FNO-AR & 0.3924 & 4.2719 & 23.0881 & 125.3225 & 931.0254 \\
+HINE-L2 & 0.0696 $\pm$ 0.0133 & 2.1890 $\pm$ 0.2611 & 3.7649 $\pm$ 0.4076 & 4.9522 $\pm$ 0.3196 & 6.1244 $\pm$ 0.6578 \\
+MSR-HINE & 0.0656 $\pm$ 0.0130 & 1.5999 $\pm$ 0.1790 & 2.7706 $\pm$ 0.3053 & 3.7480 $\pm$ 0.4415 & 4.8343 $\pm$ 0.5636 \\
+\bottomrule
+\end{tabular}}
+\end{table}

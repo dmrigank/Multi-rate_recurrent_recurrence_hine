@@ -1,0 +1,31 @@
+# Ablation: HINE baseline (no recurrence). Same U-Net as msr_hine (Invariant 10).
+# @package _global_
+defaults:
+  - /config
+  - /model: model_msr_hine
+  - _self_
+
+model:
+  name: "hine"
+  medium_dim: 128
+  coarse_dim: 64
+  enc_hidden_ch: 32
+  unet:
+    base_channels: 64
+    channel_mults: [1, 2, 2, 4, 4]
+    n_res_blocks: 2
+    groups: 8
+    attn_resolutions: [16]
+    high_k_damping: false
+
+train:
+  warmup_steps: 4
+  rollout_steps: 16
+  lambda_prior: 0.0
+  lambda_cons: 0.0
+  lambda_spec: 0.01
+  lambda_highk: 0.0
+  window_stride: 4
+  scheduled_sampling:
+    start_prob: 1.0
+    end_prob: 0.0

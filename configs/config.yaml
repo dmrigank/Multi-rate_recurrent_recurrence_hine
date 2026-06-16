@@ -1,0 +1,70 @@
+# Base Hydra config for MSR-HINE-2D experiments.
+# Override individual groups with +model=model_msr_hine, +data=data_kolmogorov, etc.
+
+defaults:
+  - _self_
+  - data: data_kolmogorov
+  - model: model_msr_hine
+
+# --- Experiment identity ---
+seed: 42
+device: "auto"         # "auto" | "cuda" | "cpu" | "cuda:N"
+log_level: "INFO"
+output_dir: "outputs/${hydra:job.name}"
+
+# --- Training ---
+train:
+  epochs: 200
+  batch_size: 4
+  tbptt_window: 32        # must be >= 32 (DESIGN.md §7)
+  warmup_steps: 12        # W = 12 (Invariant 7)
+  rollout_steps: 16       # K, annealed up during training
+  gamma: 0.99             # rollout loss discount factor
+  learning_rate: 1.0e-4
+  weight_decay: 1.0e-5
+  clip_grad_norm: 1.0
+  amp: true               # automatic mixed precision
+  num_workers: 4
+
+  # Scheduled sampling: reach the self-fed regime by mid-training, then hold.
+  scheduled_sampling:
+    start_prob: 1.0
+    phase1_prob: 0.8
+    phase1_fraction: 0.1
+    end_prob: 0.2
+    decay_end_fraction: 0.5
+
+  # Loss weights
+  lambda_prior: 0.1
+  lambda_cons: 0.1
+  lambda_spec: 0.01
+  lambda_highk: 0.0
+  k_c: 64
+
+  # Optional Phase 0 autoencoder pretrain
+  pretrain_autoencoders: false
+  pretrain_epochs: 20
+
+  # Optional Re curriculum
+  curriculum:
+    enabled: false
+    re_schedule: [1000, 2000, 4000]
+    epoch_schedule: [0, 50, 100]
+
+# --- Evaluation ---
+eval:
+  horizon_threshold: 0.65    # normalised RMSE threshold for valid horizon
+  eval_every_n_epochs: 10
+  test_rollout_steps: 500
+  tau_lambda_steps: 83.9
+  short_val_max_batches: 10
+  long_rollout_every_n_epochs: 0  # enabled by the v4 control config
+  long_rollout_steps: 64
+  long_rollout_max_trajs: 5
+
+# --- W&B (optional; install wandb extra) ---
+wandb:
+  enabled: false
+  project: "msr_hine_2d"
+  entity: null
+  tags: []

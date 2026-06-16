@@ -1,0 +1,12 @@
+{
+  "lambda": 0.5962602172425655,
+  "tau_lambda": 1.677120108104057,
+  "tau_lambda_steps": 83.85600540520285,
+  "tau_eddy": 0.1706048654532296,
+  "dt_snapshot": 0.02,
+  "n": 256,
+  "re": 4000,
+  "n_iters": 500,
+  "t_renorm_substeps": 320,
+  "dt_renorm_window": 0.08
+}

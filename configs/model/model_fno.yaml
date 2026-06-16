@@ -1,0 +1,11 @@
+# Model config for the FNO one-step autoregressive baseline (DESIGN.md §8).
+# @package model
+# NOTE: This baseline intentionally uses a different backbone (FNO, not U-Net).
+# Do NOT unify with hine/msr_hine (CLAUDE.md §2 decision 5, Invariant 10).
+
+name: "fno_1step"
+
+fno:
+  width: 64
+  modes: 32        # retained Fourier modes per spatial dim
+  n_layers: 4

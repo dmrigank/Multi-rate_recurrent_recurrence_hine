@@ -1,0 +1,86 @@
+# ── Data (generated, large) ───────────────────────────────────────────────────
+data/kolmogorov/train.h5
+data/kolmogorov/val.h5
+data/kolmogorov/test.h5
+data/kolmogorov/debug/
+data/kolmogorov/plots/
+data/kolmogorov/*.png
+
+# ── Model checkpoints ─────────────────────────────────────────────────────────
+outputs/*/checkpoints/
+outputs/ablations/*/checkpoints/
+
+# ── Training / evaluation outputs (non-paper) ─────────────────────────────────
+outputs/2026-*/
+outputs/ablations/plots/
+outputs/ablations/overfitting_analysis.png
+outputs/ablations/aggregate.log
+outputs/msr_hine_fixed/
+outputs/msr_hine_fixed_v3/
+outputs/msr_hine_v4_control/
+outputs/msr_hine_v4_no_multirate/
+outputs/msr_hine_v4_no_topdown/
+outputs/msr_hine_v4_no_topdown_v2/
+outputs/msr_hine_v4_posterior_fusion/
+outputs/msr_hine_v5_bounded_film/
+outputs/paper_figures/
+outputs/paper_figures_v3/
+outputs/paper_figures_v4/
+outputs/paper_figures_posterior_fusion/
+
+# ── Intermediate / experiment-specific Hydra configs ─────────────────────────
+configs/msr_hine_v4_control.yaml
+configs/msr_hine_v4_no_multirate.yaml
+configs/msr_hine_v4_no_topdown.yaml
+configs/msr_hine_v4_posterior_fusion.yaml
+configs/msr_hine_v5_bounded_film.yaml
+
+# ── Log files ─────────────────────────────────────────────────────────────────
+logs/
+*.log
+*.out
+
+# ── Hydra runtime outputs ─────────────────────────────────────────────────────
+.hydra/
+outputs/*//.hydra/
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+*.so
+
+# ── Virtual environments ──────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+.env
+
+# ── Jupyter ───────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+# ── Editor / OS ───────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── Pytest / coverage ─────────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ── Agent scaffolding (not part of the public repo) ───────────────────────────
+.agents/
+.codex/
+BUILD_PROMPTS.md
+CLAUDE.md
