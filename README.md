@@ -221,7 +221,7 @@ These encode the structural corrections over earlier HINE formulations:
 
 ```bibtex
 @software{dhingra2026msrhine2d,
-  author    = {Dhingra, Mrigank},
+  author    = {Dhingra, Mrigank and San, Omer},
   title     = {{MSR-HINE-2D}: Multiscale Recurrent Hierarchical Neural Emulator for 2D Kolmogorov Flow},
   year      = {2026},
   url       = {https://github.com/dmrigank/Multi-rate_recurrent_recurrence_hine},
