@@ -71,10 +71,8 @@ Valid prediction horizon (VPH) in Lyapunov-time units τ_λ, measured after a 12
 
 | Model | VPH (τ_λ) |
 |---|---|
-| FNO-AR | 0.63 |
-| UNet-AR | 0.82 |
-| HINE-L2 | 1.38 |
-| **MSR-HINE** | **1.60** |
+| HINE-L2 | 1.24 |
+| **MSR-HINE** | **1.86** |
 
 MSR-HINE also maintains tighter long-run energy spectra and stable enstrophy under free rollout beyond 10 τ_λ.
 
