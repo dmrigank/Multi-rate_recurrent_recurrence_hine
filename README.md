@@ -11,9 +11,6 @@
 Neural surrogates for chaotic PDE systems are accurate over a few steps but degrade rapidly during long autoregressive (self-fed) rollouts — they drift, blow up, or lose their energy spectrum. MSR-HINE attacks this by giving a neural operator a **multiscale recurrent memory**: slow, coarse-scale latent states that persist across the rollout and anchor the fast, fine-scale prediction, analogous to how a multirate numerical integrator treats slow and fast dynamics on different clocks.
 
 This repository implements the **2D extension** of MSR-HINE, benchmarked on **forced Kolmogorov flow** — a canonical 2D turbulence system whose dual energy/enstrophy cascade makes it a natural stress test for a method built around scale separation.
-
-A key structural correction over earlier HINE formulations: latent-state consistency is **a training-time loss only**. The inference path carries no posterior re-encoding, eliminating the circularity where re-encoding the model's own prediction reinforces drift.
-
 ---
 
 ## Method
@@ -27,7 +24,6 @@ A key structural correction over earlier HINE formulations: latent-state consist
 | **Injection** | Decoded priors injected at matching U-Net stages via FiLM modulation + spatial concatenation |
 | **Consistency** | `L_cons` (training only) — no inference-time posterior fusion |
 
-For the full mathematical specification see [`docs/DESIGN.md`](docs/DESIGN.md).
 
 ---
 
