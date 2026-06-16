@@ -4,6 +4,9 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
+[![DOI](https://zenodo.org/badge/1270766129.svg)](https://doi.org/10.5281/zenodo.20711364)
+
+
 ---
 
 ## Overview
